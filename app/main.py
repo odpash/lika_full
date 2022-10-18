@@ -11,4 +11,5 @@ if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO)
     bot = Bot(token=os.environ.get("TELEGRAM_API_TOKEN"))
     storage = MemoryStorage()
+    dp = Dispatcher(bot, storage=storage)
     executor.start_polling(dp, skip_updates=True)
