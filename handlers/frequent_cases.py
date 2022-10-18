@@ -1,7 +1,8 @@
 from aiogram import types
 
-from app.utils import buttons, messages
-from app.main import dp
+from utils import messages
+from utils import buttons
+from app import dp
 
 
 @dp.message_handler(commands=["start", "help"])

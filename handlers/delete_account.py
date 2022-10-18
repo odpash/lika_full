@@ -1,12 +1,12 @@
 from aiogram import types
 from aiogram.dispatcher import FSMContext
 
-from app.database.db import in_db, remove_by_id
-from app.handlers.frequent_cases import welcome_command
-from app.utils import buttons
-from app.utils.states import Remove
-from app.main import dp
-from app.utils import messages
+from database.db import in_db, remove_by_id
+from handlers.frequent_cases import welcome_command
+from utils import buttons
+from utils.states import Remove
+from app import dp
+from utils import messages
 
 
 @dp.message_handler(lambda m: m.text == buttons.delete_account_btn.text)

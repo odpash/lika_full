@@ -1,8 +1,9 @@
 from aiogram import types
 
-from app.database.db import read_db
-from app.main import dp
-from app.utils import buttons, messages
+from database.db import read_db
+from app import dp
+from utils import messages
+from utils import buttons
 
 
 @dp.message_handler(lambda m: m.text == buttons.show_all_accounts_btn.text)
