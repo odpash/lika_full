@@ -1,5 +1,3 @@
-## How to run?
-- docker build .
-- docker images
-- find this image
-- docker run <container_id>
+# How to run?
+### 1) docker build -t bot .
+### 2) docker run bot
