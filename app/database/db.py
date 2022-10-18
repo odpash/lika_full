@@ -38,7 +38,7 @@ async def in_db(id_v: str) -> bool:
     try:
         file = await read_db()
         for i in file:
-            if i['id'] == int(id_v):
+            if i["id"] == int(id_v):
                 return True
     except Exception:
         pass
@@ -50,9 +50,9 @@ async def remove_by_id(id_v: str):
         file = await read_db()
         new_data = []
         for i in file:
-            if i['id'] != int(id_v):
+            if i["id"] != int(id_v):
                 new_data.append(i)
-        file = open('accounts.json', mode='w', encoding='UTF-8')
+        file = open("accounts.json", mode="w", encoding="UTF-8")
         file.write(json.dumps(new_data))
         file.close()
     except Exception:
