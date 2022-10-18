@@ -11,8 +11,3 @@ async def welcome_command(message: types.Message):
         reply_markup=buttons.menu,
     )
 
-
-@dp.message_handler(content_types=["text"])
-async def no_such_command(message: types.Message):
-    await message.reply(text=messages.no_such_command(), reply_markup=buttons.none)
-    await welcome_command(message)

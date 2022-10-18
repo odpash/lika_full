@@ -5,7 +5,7 @@ from app.database.db import write_to_db
 from app.handlers.frequent_cases import welcome_command
 from app.utils import buttons
 from app.utils.states import Add
-from app.main import *
+from app.main import dp
 
 
 @dp.message_handler(lambda m: m.text == buttons.add_new_account_btn.text)

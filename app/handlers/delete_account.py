@@ -5,7 +5,7 @@ from app.database.db import in_db, remove_by_id
 from app.handlers.frequent_cases import welcome_command
 from app.utils import buttons
 from app.utils.states import Remove
-from app.main import *
+from app.main import dp
 
 
 @dp.message_handler(lambda m: m.text == buttons.delete_account_btn.text)

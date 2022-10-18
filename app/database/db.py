@@ -17,7 +17,7 @@ async def _get_new_id() -> int:
 
 
 async def read_db() -> list:
-    file = open("accounts.json", mode="r", encoding="UTF-8")
+    file = open("database/accounts.json", mode="r", encoding="UTF-8")
     try:
         data = json.loads(file.read())
     except Exception:
