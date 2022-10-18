@@ -8,6 +8,9 @@ class Add(StatesGroup):
     no_later_than = State()
     remove_dates = State()
     no_less_than = State()
+    country = State()
+    patch = State()
+    number_of_application = State()
 
 
 class Remove(StatesGroup):

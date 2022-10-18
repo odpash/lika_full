@@ -2,6 +2,13 @@ import json
 
 
 async def write_to_db(info: dict):
+    if "login" not in info.keys():
+        info["login"] = "-"
+        info["password"] = "-"
+    else:
+        info["country"] = "-"
+        info["patch"] = "-"
+        info["number_of_application"] = "-"
     info["id"] = await _get_new_id()
     info["current_date"] = ""
     await _add_to_db(info)
@@ -29,7 +36,7 @@ async def read_db() -> list:
 async def _add_to_db(info: dict):
     data = await read_db()
     data.append(info)
-    file = open("accounts.json", mode="w", encoding="UTF-8")
+    file = open("database/accounts.json", mode="w", encoding="UTF-8")
     file.write(json.dumps(data))
     file.close()
 
@@ -52,7 +59,7 @@ async def remove_by_id(id_v: str):
         for i in file:
             if i["id"] != int(id_v):
                 new_data.append(i)
-        file = open("accounts.json", mode="w", encoding="UTF-8")
+        file = open("database/accounts.json", mode="w", encoding="UTF-8")
         file.write(json.dumps(new_data))
         file.close()
     except Exception:
