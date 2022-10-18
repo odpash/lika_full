@@ -7,7 +7,7 @@ from dotenv import load_dotenv
 
 
 if __name__ == "__main__":
-    load_dotenv(".env")
+    load_dotenv("../.env")
     logging.basicConfig(level=logging.INFO)
     bot = Bot(token=os.environ.get("TELEGRAM_API_TOKEN"))
     storage = MemoryStorage()
